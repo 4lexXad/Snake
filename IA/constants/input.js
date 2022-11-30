@@ -1,0 +1,4 @@
+const INPUT = [
+    "xSnk",
+    "ySnk",
+]
