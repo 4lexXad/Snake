@@ -1,18 +1,19 @@
-var scale = 10;
-const GAME = new Game(document.getElementById("backboard"));
-var snake = [
-    new Snake(10, 20, /* createBrain(0.8) */),
-    new Snake(10, 30, /* createBrain(0.8) */),
-    new Snake(10, 40, /* createBrain(0.8) */),
-    new Snake(10, 50, /* createBrain(0.8) */),
-    new Snake(10, 60, /* createBrain(0.8) */),
-    new Snake(10, 70, /* createBrain(0.8) */),
-    new Snake(10, 80, /* createBrain(0.8) */),
+import * as Module from "./module.js";
+
+let scale = 10;
+
+export const GAME = new Module.Game(document.getElementById("backboard"));
+
+let snake = [
+    new Module.Snake(10, 20, /* createBrain(0.8) */),
+    
 ]
-var food = [
-    new Food(random(GAME.w / scale, 0), random(GAME.h / scale, 0)),
+
+let food = [
+    new Module.Food(random(GAME.w / scale, 0), random(GAME.h / scale, 0)),
 ]
-entity = [
+
+let entity = [
     snake, 
     food
 ]
@@ -55,7 +56,7 @@ function frame() {
     //window.requestAnimationFrame(frame);
 }
 
-function random(max, min) {
+export function random(max, min) {
     let random = Math.random() * max + min;
     random = Math.trunc(random) * 10;
     return random;
@@ -64,6 +65,11 @@ function random(max, min) {
 function collision(a, b) {
     if (a.x == b.x && a.y == b.y) return true;
     return false;
+}
+
+
+window.onkeydown = function (e) {
+    if (KEY[e.keyCode]) KEY[e.keyCode](snake[0]);
 }
 
 play ();

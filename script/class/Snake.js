@@ -1,5 +1,11 @@
+import { Entity } from "../module.js";
+import { Cube } from "../module.js";
+import { GAME } from "../module.js";
+
 let speed = 10;
-class Snake extends Entity {
+let scale = 10;
+
+export class Snake extends Entity {
     constructor (x, y, brain) {
         super (x, y, scale, scale, 'blue');
 

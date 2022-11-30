@@ -12,7 +12,3 @@ const KEY = {
         ent.down()
     },
 }
-
-window.onkeydown = function (e) {
-    if (KEY[e.keyCode]) KEY[e.keyCode](snake[0]);
-}

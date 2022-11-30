@@ -1,4 +1,4 @@
-class Game {
+export class Game {
     constructor (canvas) {
         this.ctx = canvas.getContext('2d');
 

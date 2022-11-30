@@ -1,4 +1,10 @@
-class Food extends Entity {
+import { Entity } from "../module.js";
+import { GAME } from "../module.js";
+import { random } from "../module.js";
+
+let scale = 10;
+
+export class Food extends Entity {
     constructor (x, y) {
         super (x, y, scale, scale, 'red');
     }

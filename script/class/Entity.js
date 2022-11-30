@@ -1,4 +1,4 @@
-class Entity {
+export class Entity {
     constructor (x, y, w, h, color) {
         this.x = x;
         this.y = y;
