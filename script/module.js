@@ -7,4 +7,6 @@ import { Cube } from "./class/Cube.js";
 import { GAME } from "./script.js";
 import { random } from "./script.js";
 
-export { Game, Entity, Snake, Food, Cube, GAME, random }
+import { createBrain } from "../IA-JS/module.js";
+
+export { Game, Entity, Snake, Food, Cube, GAME, random, createBrain }

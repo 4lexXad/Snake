@@ -1,4 +1,0 @@
-const INPUT = [
-    "xSnk",
-    "ySnk",
-]

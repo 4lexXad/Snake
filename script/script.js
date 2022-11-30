@@ -5,8 +5,7 @@ let scale = 10;
 export const GAME = new Module.Game(document.getElementById("backboard"));
 
 let snake = [
-    new Module.Snake(10, 20, /* createBrain(0.8) */),
-    
+    new Module.Snake(10, 20, /* Module.createBrain(0.5) */),
 ]
 
 let food = [
@@ -19,6 +18,8 @@ let entity = [
 ]
 
 function play () {
+
+    console.log(snake);
 
     snake.forEach(snk => {
         entity.push(snk.body);
