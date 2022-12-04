@@ -1,13 +1,10 @@
 import { Entity } from "../module.js";
 import { Cube } from "../module.js";
-import { GAME } from "../module.js";
-
-let speed = 10;
-let scale = 10;
+import { Var } from "../module.js";
 
 export class Snake extends Entity {
     constructor (x, y, brain) {
-        super (x, y, scale, scale, 'blue');
+        super (x, y, Var.scale.value, Var.scale.value, 'blue');
 
         this.motion = {
             'left': 0,
@@ -33,20 +30,20 @@ export class Snake extends Entity {
         this.body[0].y = this.y;
 
         if (this.motion.left) {
-            this.x -= speed;
-            if (this.x < 0) this.x = GAME.w
+            this.x -= Var.speed.value;
+            if (this.x < 0) this.x = Var.width.value;
         }
         else if (this.motion.up) {
-            this.y -= speed;
-            if (this.y < 0) this.y = GAME.h
+            this.y -= Var.speed.value;
+            if (this.y < 0) this.y = Var.height.value;
         }
         else if (this.motion.right) {
-            this.x += speed;
-            if (this.x > GAME.w) this.x = 0;
+            this.x += Var.speed.value;
+            if (this.x > Var.width.value) this.x = 0;
         }
         else if (this.motion.down) {
-            this.y += speed;
-            if (this.y > GAME.h) this.y = 0;
+            this.y += Var.speed.value;
+            if (this.y > Var.height.value) this.y = 0;
         }
     }
 

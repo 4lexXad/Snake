@@ -1,15 +1,15 @@
 import * as Module from "./module.js";
 
-let scale = 10;
-
 export const GAME = new Module.Game(document.getElementById("backboard"));
+Module.Var.width.value = GAME.w;
+Module.Var.height.value = GAME.h;
 
 let snake = [
-    new Module.Snake(10, 20, /* Module.createBrain(0.5) */),
+    new Module.Snake(10, 20, /* Module.fun.createBrain(0.5) */),
 ]
 
 let food = [
-    new Module.Food(random(GAME.w / scale, 0), random(GAME.h / scale, 0)),
+    new Module.Food(Module.fun.random(GAME.w / Module.Var.scale.value, 0), Module.fun.random(GAME.h / Module.Var.scale.value, 0)),
 ]
 
 let entity = [
@@ -55,12 +55,6 @@ function frame() {
     })
 
     //window.requestAnimationFrame(frame);
-}
-
-export function random(max, min) {
-    let random = Math.random() * max + min;
-    random = Math.trunc(random) * 10;
-    return random;
 }
 
 function collision(a, b) {

@@ -1,16 +1,14 @@
 import { Entity } from "../module.js";
-import { GAME } from "../module.js";
-import { random } from "../module.js";
-
-let scale = 10;
+import { Var } from "../module.js";
+import { fun } from "../module.js";
 
 export class Food extends Entity {
     constructor (x, y) {
-        super (x, y, scale, scale, 'red');
+        super (x, y, Var.scale.value, Var.scale.value, 'red');
     }
 
     rnd () {
-        this.x = random(GAME.w / 10, 0);
-        this.y = random(GAME.h / 10, 0);
+        this.x = fun.random(Var.width.value / 10, 0);
+        this.y = fun.random(Var.height.value / 10, 0);
     }
 }
